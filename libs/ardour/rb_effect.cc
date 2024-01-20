@@ -24,8 +24,7 @@
 
 #include <glibmm.h>
 
-#include <rubberband/RubberBandStretcher.h>
-
+#include "ardour/warper.h"
 #include "pbd/error.h"
 #include "pbd/progress.h"
 
@@ -167,7 +166,7 @@ RBEffect::run (std::shared_ptr<Region> r, Progress* progress)
 	     << ", shift = " << shift << endl;
 #endif
 
-	RubberBandStretcher stretcher (session.sample_rate (), channels,
+	RubberBandWarper stretcher (session.sample_rate (), channels,
 	                               (RubberBandStretcher::Options)tsr.opts,
 	                               stretch, shift);
 
