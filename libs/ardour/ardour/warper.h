@@ -45,7 +45,8 @@ public:
 	bool canRealtimeWarp() const;
 private:
 	RubberBand::RubberBandStretcher rbs;
-	std::unordered_map<size_t, size_t> key_frame_map;
+	std::map<size_t, size_t> key_frame_map;
+	bool processing;
 };
 
 }
